@@ -27,6 +27,24 @@ namespace Ch10CardLib
             cards = newCards;
         }
 
+        public Deck(bool isAceHigh) : this()
+        {
+            Card.isAceHigh = isAceHigh;
+        }
+
+        public Deck(bool useTrumps, Suit trumps) : this()
+        {
+            Card.useTrumps = useTrumps;
+            Card.trumps = trumps;
+        }
+
+        public Deck(bool isAceHigh, bool useTrumps, Suit trumps) : this()
+        {
+            Card.isAceHigh = isAceHigh;
+            Card.useTrumps = useTrumps;
+            Card.trumps = trumps;
+        }
+
         public object Clone()
         {
             Deck newDeck = new Deck(cards.Clone() as Cards);

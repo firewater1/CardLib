@@ -6,7 +6,7 @@ using System.Collections;
 namespace Ch10CardLib
 {
     public class Cards : CollectionBase, ICloneable
-    {
+    {      
         public void Add(Card card)
         {
             List.Add(card);
