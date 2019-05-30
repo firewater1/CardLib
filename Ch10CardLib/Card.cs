@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ch10CardLib
 {
-    public class Card
+    public class Card : ICloneable
     {
         public readonly Suit suit;
         public readonly Rank rank;
@@ -25,5 +25,11 @@ namespace Ch10CardLib
         {
             return "The " + rank + " of " + suit + 's';
         }
+
+        /*public object Clone()
+        {
+            return MemberwiseClone();
+        }*/
+        public object Clone() => MemberwiseClone();
     }
 }

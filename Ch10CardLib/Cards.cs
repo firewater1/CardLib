@@ -5,7 +5,7 @@ using System.Text;
 using System.Collections;
 namespace Ch10CardLib
 {
-    public class Cards : CollectionBase
+    public class Cards : CollectionBase, ICloneable
     {
         public void Add(Card card)
         {
@@ -26,6 +26,16 @@ namespace Ch10CardLib
             {
                 targetCards[index] = this[index];
             }
+        }
+
+        public object Clone()
+        {
+            Cards newCards = new Cards();
+            foreach (Card sourceCard in List)
+            {
+                newCards.Add((Card)sourceCard.Clone());
+            }
+            return newCards;
         }
     }
 }
