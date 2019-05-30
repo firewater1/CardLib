@@ -39,6 +39,10 @@ namespace Ch10CardLib
         public static bool operator ==(Card card1, Card card2) => (card1?.suit == card2?.suit) && (card1?.rank == card2?.rank);
         public static bool operator !=(Card card1, Card card2) => !(card1 == card2);
         public override bool Equals(object card) => this == (Card)card;
-        //public override int GetHashCode() => return 13 * (int)suit + (int)rank;
+        /*public override int GetHashCode()
+        {
+            return 13 * (int)suit + (int)rank;
+        }*/
+        public override int GetHashCode() =>  13 * (int) suit + (int) rank;
     }
 }
